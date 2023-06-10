@@ -4,12 +4,9 @@ import { useHistory } from 'react-router-dom';
 import './MovieList.css'
 
 function MovieList() {
-    // const [clickedMovie, setClickedMovie] = useState('');
-
     const history = useHistory();
     const dispatch = useDispatch();
     const movies = useSelector(store => store.movies);
-    // console.log('movies: ', movies);
 
     useEffect(() => {
         dispatch({ type: 'FETCH_MOVIES' })
@@ -39,9 +36,3 @@ function MovieList() {
 }
 
 export default MovieList;
-
-        // dispatch({
-        //     type: 'FETCH_MOVIE_DETAILS',
-        //     payload: clickedMovie.id
-        // })
-        // history.push(`/movies/details/:${clickedMovie.id}`)

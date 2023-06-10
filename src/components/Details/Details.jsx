@@ -40,11 +40,3 @@ export default function Details(){
         </div>
     )
 }
-//    return (
-//       <>
-//          <h1>Book Details</h1>
-//          <h2>{book.title}</h2>
-//          <p>Written by {book.author}</p>
-//       </>
-//    );
-// }

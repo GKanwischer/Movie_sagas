@@ -57,11 +57,6 @@ router.post('/', (req, res) => {
 router.get('/:id', (req, res) => {
   console.log('req.params: ', req.params);
 
-  // const queryText = `SELECT "movies"."title", "movies"."poster", "movies"."description", "genres"."name" FROM "movies"
-  //   JOIN "movies_genres" ON "movies"."id" = "movies_genres"."movie_id"
-  //   JOIN "genres" ON "genres"."id" = "movies_genres"."genre_id"
-  //   WHERE "movies"."id" = $1`;
-
   const queryText = `SELECT "movies"."title", "movies"."poster", "movies"."description", string_agg("genres"."name", ', ') AS "genre_names"
   FROM "movies"
   JOIN "movies_genres" ON "movies"."id" = "movies_genres"."movie_id"
