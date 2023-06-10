@@ -29,10 +29,10 @@ function* fetchingAllGenresSaga(){  // Saga for GETing all of the Genres from th
 
 function* fetchSingleMovieSaga(action){
     try{
-        const response = yield axios.get(`/api/movies/details/${action.paylaod}`)
-        console.log('Getting movie at id: ', response);
-        yield put({ type: 'SET_MOVIE_DETAILS', payload: response})
+        const response = yield axios.get(`/api/movie/${action.payload}`)
+        console.log(`Getting movie at id: ${action.payload}`, response.data);
+        yield put({ type: 'SET_MOVIE_DETAILS', payload: response.data})
     } catch {
-        console.log('error getting selected movie');
+        console.log('error getting selected movie at id:', action.payload);
     }
 }

@@ -1,24 +1,43 @@
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { useHistory } from 'react-router-dom';
 
 
 export default function Details(){
-    let movies = useSelector(store => store.movies);
-
+    const dispatch = useDispatch();
     let params = useParams();
+    const history = useHistory();
+    let selectedMovie = useSelector(store => store.selectedMovie);
+    let movieId = params.id; // :movieId is set up in App.js
+
     console.log('params: ', params);
+    console.log('selected movie: ', selectedMovie);
 
-    // Go hunting for the book by the id that we were given
-    let movieId = params.movieId; // :bookId is set up in App.js
-    let movie = movies.find(movie => movie.id === Number(movieId));
-    console.log('found movie: ', movie);
 
-    if(!movie) return <h2>Invalid Movie ID</h2>;
+
+    useEffect(() => {
+        dispatch({
+            type: 'FETCH_MOVIE_DETAILS',
+            payload: movieId
+        })
+    }, [])
+
+    if(selectedMovie.length === 0) return <h2>Invalid Movie ID</h2>;
 
     return(
-        <container>
-            <h3>hello</h3>
-        </container>
+        <div>
+            <h3>Movie Title: {selectedMovie.title}</h3>
+            <img src={selectedMovie.poster}/>
+            <div className='movie-details'>
+                <h4>Genres: {selectedMovie.genre_names}</h4>
+                <h4>Movie Description: {selectedMovie.description}</h4>
+            </div>
+            <div className='back-btn'>
+                <button onClick={() => history.push('/movies')}>Go Back</button>
+            </div>
+
+        </div>
     )
 }
 //    return (
