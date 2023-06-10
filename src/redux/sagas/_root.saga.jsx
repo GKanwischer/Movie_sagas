@@ -4,6 +4,7 @@ import axios from 'axios';
 export default function* _rootSaga() {
     yield takeEvery('FETCH_MOVIES', fetchAllMoviesSaga);
     yield takeEvery('FETCH_GENRES', fetchingAllGenresSaga);
+    yield takeEvery('FETCH_MOVIE_DETAILS',fetchSingleMovieSaga);
 }
 
 function* fetchAllMoviesSaga() {  // Saga for GETing all of the Movies from the db
@@ -23,5 +24,15 @@ function* fetchingAllGenresSaga(){  // Saga for GETing all of the Genres from th
         yield put({ type: 'SET_GENRES', payload: genres.data})
     } catch {
         console.log('error getting all genres');
+    }
+}
+
+function* fetchSingleMovieSaga(action){
+    try{
+        const response = yield axios.get(`/api/movie/${action.payload}`)
+        console.log(`Getting movie at id: ${action.payload}`, response.data);
+        yield put({ type: 'SET_MOVIE_DETAILS', payload: response.data})
+    } catch {
+        console.log('error getting selected movie at id:', action.payload);
     }
 }
