@@ -23,13 +23,13 @@ function MovieList() {
         <main>
             <h1>MovieList</h1>
             <Container className="movies">
-                <Grid container spacing={3}>
+                <Grid container spacing={6}>
                     {movies.map(movie => {
                         return (
                             <Grid item
                                 key={movie.id}
                                 onClick={() => handleMovieClick(movie)}
-                                xs={6} md={4} lg={2}>
+                                xs={6} md={4} lg={3}>
                                     <ListItem movie={movie} />
                             </Grid>
                         );

@@ -1,0 +1,39 @@
+.details-container{
+    background-color: rgba(213, 142, 19, 0.850);
+    margin-top: 20px;
+    margin-bottom: 10px;
+    margin-left: 50px;
+    margin-right: 50px;
+    padding: 30px;
+    border-radius: 20px;
+    border: black solid 4px;
+    
+}
+
+.details-container img{
+    height: 450px;
+}
+
+.details-title{
+    color: white;
+    font-size: 3rem;
+}
+
+.movie-details{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.movie-details h4{
+    margin-top: 2px;
+    margin-bottom: 0px;
+    font-size: 1.5rem;
+
+}
+
+.movie-details p{
+    padding-right: 50px;
+    margin-top: 5px;
+    text-align: left;
+}

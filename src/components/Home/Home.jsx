@@ -4,7 +4,7 @@ import './Home.css';
 export default function Home(){
 
     return(
-        <div>
+        <div className="home">
             <h2> Welcome to my Movie Collection</h2>
             <p>Here you can browse through my collection of movies, <br/>
                 see their poster art, and view addition details about each movie. <br/>

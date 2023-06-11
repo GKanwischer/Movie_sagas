@@ -2,6 +2,10 @@
   text-align: center;
 
 }
+h1{
+  color: rgb(202, 182, 148);
+  text-shadow: 3px 3px 3px 3px rgb(73, 72, 72);
+}
 
 
 .App-header {
@@ -26,4 +30,5 @@
 
 nav a{
   margin: 10px;
+  color: white;
 }
