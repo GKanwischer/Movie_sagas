@@ -3,3 +3,9 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+html{
+  background-image: url('/public/images/background_curtain2.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
