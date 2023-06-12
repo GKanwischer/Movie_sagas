@@ -1,33 +1,23 @@
-import { HashRouter as Router, Route, Switch, NavLink, Link } from 'react-router-dom';
+// react imports
+import { HashRouter as Router, Route, Switch } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { useEffect } from 'react'
 import './App.css';
 
 // Component imports
+import Header from '../Header/Header';
 import Home from '../Home/Home';
 import MovieList from '../MovieList/MovieList'
 import Details from '../Details/Details';
 import MovieForm from '../MovieForm/MovieForm';
 
 function App() {
+  // instantiation of useDispatch
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch({ type: 'FETCH_GENRES' });
-}, []);
-
-  const Header = () => {
-
-    return (
-      <>
-        <h1>The Movies Saga!</h1>
-        <nav>
-          <NavLink to="/">Home</NavLink>
-          <NavLink to="/movies">Collection</NavLink>
-          <NavLink to="/movie_form" >Add Movie</NavLink>
-        </nav></>
-    )
-  }
+  }, []);
 
   return (
     <div className="App">
@@ -48,6 +38,7 @@ function App() {
           </Route>
         </Switch>
       </Router>
+      <p className="copyright">&copy; 2023 Garret Kanwischer - Jolitz cohort, EDA. All rights reserved.</p>
     </div>
   );
 }

@@ -1,9 +1,13 @@
+// material ui import
 import { Card, CardContent, CardMedia } from '@material-ui/core'
+// an attempt at a different styling file format, specifically for a material ui component
 import { useStyles } from './ListItemStyles';
+// css import
 import './MovieList.css'
 
-
+// component to handle each individual movie in the MovieList display
 export default function ListItem({ movie }) {
+    // variable to help access the material ui styling
     const classes = useStyles();
 
     return (

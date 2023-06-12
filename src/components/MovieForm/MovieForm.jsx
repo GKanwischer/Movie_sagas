@@ -8,8 +8,9 @@ import { Select, Option, Button } from '@mui/joy';
 // css import
 import './MovieForm.css'
 
+// component that displays a form for the user to add a new movie into the database
 export default function MovieForm() {
-    // instantiation of useHistory
+    // instantiation of useHistory and useDispatch
     const history = useHistory();
     const dispatch = useDispatch();
 
@@ -22,15 +23,13 @@ export default function MovieForm() {
     const [urlInput, setUrlInput] = useState('');
     const [genreInput, setGenreInput] = useState('');
 
-    let newMovie = { 
-        title: titleInput, 
-        poster: urlInput, 
-        description: descriptionInput, 
-        genre_id: genreInput };
-
-    useEffect(() => {
-        console.log('genre input:', genreInput);
-    }, [genreInput]);
+    // creating a new movie to be sent back to the database
+    let newMovie = {
+        title: titleInput,
+        poster: urlInput,
+        description: descriptionInput,
+        genre_id: genreInput
+    };
 
     // function for submitting a new movie to the db and its relation to a genre
     function handleSubmit() {
@@ -38,7 +37,7 @@ export default function MovieForm() {
             type: 'ADD_MOVIE',
             payload: newMovie
         })
-        // history.push('/movies')
+        history.push('/movies')
         console.log('new movie: ', newMovie);
     }
 

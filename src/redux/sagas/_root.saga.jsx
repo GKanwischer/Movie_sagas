@@ -41,7 +41,6 @@ function* fetchSingleMovieSaga(action){ // Saga for getting the details of a sin
 function* addNewMovieSaga(action){ // Saga for adding a movie to the database
     try {
         console.log("adding the movie:", action.payload);
-    
         yield axios.post("/api/movie", action.payload);
         console.log("added data successfully, refreshing data");
         yield put({ type: "FETCH_MOVIES" });

@@ -1,4 +1,4 @@
-.home{
+.home {
     background-color: rgba(213, 142, 19, 0.850);
     margin-top: 20px;
     margin-bottom: 10px;
@@ -7,4 +7,24 @@
     padding: 30px;
     border-radius: 20px;
     border: black solid 4px;
+    width: 65%;
+    display: inline-block;
+}
+
+.home p {
+    color: rgb(202, 182, 148);
+    text-shadow: 1px 1px 2px rgb(0, 0, 0);
+    font-size: 25px;
+    font-family: cursive;
+    font-weight: bold;
+}
+
+.home h2 {
+    font-size: 40px;
+    margin-top: 5px;
+    text-decoration: underline;
+}
+
+.home a {
+    color: white;
 }

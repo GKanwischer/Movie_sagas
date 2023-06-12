@@ -63,7 +63,7 @@ router.get('/:id', (req, res) => {
   JOIN "genres" ON "genres"."id" = "movies_genres"."genre_id"
   WHERE "movies"."id" = $1
   GROUP BY "movies"."id";`;
-  
+
   pool.query(queryText, [req.params.id])
     .then(result => {
       console.log('query result: ', result);

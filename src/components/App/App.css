@@ -2,9 +2,11 @@
   text-align: center;
 
 }
-h1{
+
+h1 {
+  font-size: 3rem;
   color: rgb(202, 182, 148);
-  text-shadow: 3px 3px 3px 3px rgb(73, 72, 72);
+  text-shadow: 2px 2px 2px rgb(173, 116, 17);
 }
 
 
@@ -24,11 +26,23 @@ h1{
 }
 
 @keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
 }
 
-nav a{
+nav a {
   margin: 10px;
   color: white;
+  font-size: 18px;
+}
+
+p.copyright {
+  color: white;
+  font-size: 12px;
+  font-style: italic;
 }

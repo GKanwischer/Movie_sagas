@@ -9,7 +9,6 @@ const movies = (state = [], action) => {
             return state;
     }
 }
-
 // Used to store the movie genres
 const genres = (state = [], action) => {
     switch (action.type) {
@@ -19,7 +18,7 @@ const genres = (state = [], action) => {
             return state;
     }
 }
-
+// Used to store the selected movie
 const selectedMovie = (state ={}, action) => {
     switch (action.type) {
         case 'SET_MOVIE_DETAILS':
