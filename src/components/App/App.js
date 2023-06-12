@@ -1,4 +1,6 @@
 import { HashRouter as Router, Route, Switch, NavLink, Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { useEffect } from 'react'
 import './App.css';
 
 // Component imports
@@ -8,6 +10,11 @@ import Details from '../Details/Details';
 import MovieForm from '../MovieForm/MovieForm';
 
 function App() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch({ type: 'FETCH_GENRES' });
+}, []);
 
   const Header = () => {
 
@@ -17,7 +24,7 @@ function App() {
         <nav>
           <NavLink to="/">Home</NavLink>
           <NavLink to="/movies">Collection</NavLink>
-          <NavLink to="/movie_form">Add Movie</NavLink>
+          <NavLink to="/movie_form" >Add Movie</NavLink>
         </nav></>
     )
   }
